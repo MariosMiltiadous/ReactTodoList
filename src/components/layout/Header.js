@@ -1,9 +1,17 @@
 import { withTheme } from "../hocs/withTheme";
+import {UserNameContext} from '../../contexts/UserNameContext';
+import { useContext } from 'react';
+import Button from '@mui/material/Button';
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import Avatar from '@mui/material/Avatar';
 
 const Header = ({ layoutVersion, darkTheme, toggleTheme }) => {
+
+  const { name } = useContext(UserNameContext);
+
   return (
     <header>
-      <h2>To-do List</h2>
+       <Avatar>{ name } </Avatar>
       <span className="nav-item">
         <input
           type="checkbox"
